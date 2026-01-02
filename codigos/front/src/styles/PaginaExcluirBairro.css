@@ -1,0 +1,160 @@
+/* PaginaExcluirBairro.css */
+:root {
+  --color-primary: #008400;
+  --color-secondary: #D600D6;
+  --color-light: #FFFFFF;
+  --color-dark: #000000;
+  --font-family: 'Arial', sans-serif;
+}
+
+.pagina-excluir-bairro {
+  padding: 2rem;
+  font-family: var(--font-body);
+  max-width: 1200px;
+  margin: 0 auto;
+  color: var(--color-dark);
+}
+
+.pagina-excluir-bairro h1 {
+  font-family: var(--font-heading);
+  font-size: var(--font-heading-1);
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+  font-weight: bold;
+  text-align: center;
+}
+
+.confirmacao-exclusao {
+  background-color: var(--color-light);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.info-bairro {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.nome-bairro {
+  font-family: var(--font-heading);
+  font-size: var(--font-heading-4);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.taxa-bairro {
+  font-family: var(--font-heading);
+  font-size: var(--font-heading-3);
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.aviso-exclusao {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.aviso-irreversivel {
+  color: #dc3545;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.mensagem-erro {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #f5c6cb;
+}
+
+.acoes-exclusao {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-cancelar {
+  background-color: #6c757d;
+  color: var(--color-light);
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+  min-width: 120px;
+}
+
+.btn-cancelar:hover {
+  background-color: #5a6268;
+}
+
+.btn-excluir {
+  background-color: #dc3545;
+  color: var(--color-light);
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+  min-width: 120px;
+}
+
+.btn-excluir:hover {
+  background-color: #c82333;
+}
+
+.btn-excluir:disabled, .btn-cancelar:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.btn-voltar {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+  display: block;
+  margin: 2rem auto 0;
+}
+
+.btn-voltar:hover {
+  background-color: #006e00;
+}
+
+.carregando {
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .pagina-excluir-bairro {
+    padding: 1rem;
+  }
+  
+  .pagina-excluir-bairro h1 {
+    font-size: 2rem;
+  }
+  
+  .confirmacao-exclusao {
+    padding: 1.5rem;
+  }
+  
+  .acoes-exclusao {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .acoes-exclusao button {
+    width: 100%;
+  }
+}

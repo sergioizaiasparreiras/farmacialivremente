@@ -1,0 +1,320 @@
+/* FORÇA MODO CLARO SEMPRE - IGNORA TEMA GLOBAL */
+.login-container,
+[data-theme="dark"] .login-container {
+  background-color: #ffffff !important;
+}
+
+.login-container .login-form,
+[data-theme="dark"] .login-container .login-form {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.login-container input,
+.login-container input[type="password"],
+.login-container input[type="text"],
+.login-container input[type="email"],
+.login-container .password-container input,
+[data-theme="dark"] .login-container input,
+[data-theme="dark"] .login-container input[type="password"],
+[data-theme="dark"] .login-container input[type="text"],
+[data-theme="dark"] .login-container input[type="email"],
+[data-theme="dark"] .login-container .password-container input {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #ccc !important;
+}
+
+/* Regra extra específica para campo de senha */
+.login-container .password-container input[name="password"],
+.login-container input[name="password"],
+[data-theme="dark"] .login-container .password-container input[name="password"],
+[data-theme="dark"] .login-container input[name="password"] {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #ccc !important;
+}
+
+.login-container input::placeholder,
+[data-theme="dark"] .login-container input::placeholder {
+  color: #666666 !important;
+  opacity: 1 !important;
+}
+
+.login-container h2,
+.login-container p,
+.login-container .subtitle,
+.login-container .login-link,
+html[data-theme="dark"] .login-container h2,
+html[data-theme="dark"] .login-container p,
+html[data-theme="dark"] .login-container .subtitle,
+html[data-theme="dark"] .login-container .login-link,
+body[data-theme="dark"] .login-container h2,
+body[data-theme="dark"] .login-container p,
+body[data-theme="dark"] .login-container .subtitle,
+body[data-theme="dark"] .login-container .login-link,
+[data-theme="dark"] .login-container h2,
+[data-theme="dark"] .login-container p,
+[data-theme="dark"] .login-container .subtitle,
+[data-theme="dark"] .login-container .login-link {
+  color: #000000 !important;
+  background-color: transparent !important;
+}
+
+/* Regra específica para título */
+.login-container .login-form h2,
+html[data-theme="dark"] .login-container .login-form h2,
+body[data-theme="dark"] .login-container .login-form h2,
+[data-theme="dark"] .login-container .login-form h2 {
+  color: #000000 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.login-container .login-link a,
+[data-theme="dark"] .login-container .login-link a {
+  color: #000000 !important;
+}
+
+/* Exceções para elementos específicos */
+.login-container .primary-btn,
+[data-theme="dark"] .login-container .primary-btn {
+  background-color: #008400 !important;
+  color: #ffffff !important;
+}
+
+.login-container .primary-btn:hover,
+[data-theme="dark"] .login-container .primary-btn:hover {
+  background-color: #00aa00 !important;
+}
+
+.login-container .login-image,
+[data-theme="dark"] .login-container .login-image {
+  background: #f4f4f4 !important;
+}
+
+.login-container .erro,
+.login-container .error-message,
+[data-theme="dark"] .login-container .erro,
+[data-theme="dark"] .login-container .error-message {
+  color: red !important;
+  background-color: #ffffff !important;
+}
+
+.login-container .sucesso,
+[data-theme="dark"] .login-container .sucesso {
+  color: #008400 !important;
+  background-color: #ffffff !important;
+}
+
+.login-container .toggle-password,
+[data-theme="dark"] .login-container .toggle-password {
+  color: #008400 !important;
+}
+
+.login-container .toggle-password:hover,
+[data-theme="dark"] .login-container .toggle-password:hover {
+  color: #00aa00 !important;
+}
+
+.login-container input:disabled,
+[data-theme="dark"] .login-container input:disabled {
+  background-color: #f5f5f5 !important;
+  color: #666 !important;
+}
+
+.login-container .primary-btn[disabled],
+[data-theme="dark"] .login-container .primary-btn[disabled] {
+  background-color: #006600 !important;
+  color: #ffffff !important;
+}
+
+.login-container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+.login-form {
+  flex: 1;
+  padding: 60px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.login-logo {
+  width: 40px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.subtitle a {
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+}
+
+.login-form input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.primary-btn {
+  background-color: #008400;
+  color: #ffffff;
+  padding: 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition:
+    background 0.3s ease,
+    transform 0.1s ease;
+}
+
+.primary-btn:hover {
+  background-color: #00aa00;
+}
+
+.primary-btn:active {
+  transform: scale(0.98);
+}
+
+.login-image {
+  flex: 1;
+  background: #f4f4f4;
+}
+
+.login-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.erro,
+.error-message {
+  color: red;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.sucesso {
+  color: #008400;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-container input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #008400;
+  transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+  color: #00aa00;
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-image {
+    display: none;
+  }
+
+  .login-logo {
+    width: 32px;
+    top: 20px;
+    left: 20px;
+  }
+
+  .login-form {
+    padding: 30px;
+  }
+}
+
+.login-link {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.login-link a {
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+}
+
+.primary-btn[disabled] {
+  background-color: #006600;
+  cursor: not-allowed;
+}
+
+.primary-btn .loading-text {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.primary-btn .loading-text::after {
+  content: "...";
+  display: inline-block;
+  width: 20px;
+  overflow: hidden;
+  vertical-align: bottom;
+  animation: loadingDots 1.5s infinite steps(4);
+}
+
+@keyframes loadingDots {
+  0% { width: 0; }
+  100% { width: 20px; }
+}
+
+/* Garante que os inputs desabilitados mantenham o estilo */
+input:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.toggle-password:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

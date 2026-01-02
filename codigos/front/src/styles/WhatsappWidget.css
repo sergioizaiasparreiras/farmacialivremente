@@ -1,0 +1,125 @@
+.whatsapp-fab {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: opacity 0.3s;
+}
+.whatsapp-fab.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+.whatsapp-icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+}
+.whatsapp-msg {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--font-body);
+}
+
+.whatsapp-widget {
+  position: fixed;
+  bottom: 90px;
+  right: 32px;
+  width: 350px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(.4,2,.6,1);
+  z-index: 1001;
+}
+.whatsapp-widget.open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: all;
+}
+
+.whatsapp-header {
+  background: #25d366;
+  color: #fff;
+  border-radius: 12px 12px 0 0;
+  padding: 18px 20px 12px 20px;
+  display: flex;
+  align-items: center;
+}
+.whatsapp-header-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+}
+.whatsapp-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-heading-3);
+  font-weight: bold;
+}
+.whatsapp-subtitle {
+  font-family: var(--font-body);
+  color: #888;
+  font-size: var(--font-small);
+  padding: 12px 20px 0 20px;
+}
+.whatsapp-card {
+  background: #f5f6fa;
+  margin: 18px 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.whatsapp-card:hover {
+  background: #e1f7e7;
+}
+.whatsapp-card-icon {
+  width: 44px;
+  height: 44px;
+  margin-right: 14px;
+}
+.whatsapp-card-title {
+  font-family: var(--font-heading);
+  font-weight: bold;
+  font-size: var(--font-heading-4);
+}
+.whatsapp-card-text {
+  font-family: var(--font-body);
+  font-size: var(--font-small);
+  color: #555;
+}
+.whatsapp-card-arrow {
+  margin-left: auto;
+  font-size: var(--font-heading-3);
+  color: #25d366;
+}
+.whatsapp-close {
+  position: absolute;
+  bottom: -32px;
+  right: 0;
+  background: #25d366;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 32px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  transition: background 0.2s;
+}
+.whatsapp-close:hover {
+  background: #1ebe57;
+}

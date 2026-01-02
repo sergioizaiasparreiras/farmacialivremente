@@ -1,0 +1,316 @@
+/* src/styles/Registro.css */
+
+/* FORÇA MODO CLARO SEMPRE - IGNORA TEMA GLOBAL */
+.registro-container,
+[data-theme="dark"] .registro-container {
+  background-color: #ffffff !important;
+}
+
+.registro-container .registro-form,
+[data-theme="dark"] .registro-container .registro-form {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.registro-container input,
+.registro-container input[type="password"],
+.registro-container input[type="text"],
+.registro-container input[type="email"],
+.registro-container .password-container input,
+[data-theme="dark"] .registro-container input,
+[data-theme="dark"] .registro-container input[type="password"],
+[data-theme="dark"] .registro-container input[type="text"],
+[data-theme="dark"] .registro-container input[type="email"],
+[data-theme="dark"] .registro-container .password-container input {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #ccc !important;
+}
+
+.registro-container input::placeholder,
+[data-theme="dark"] .registro-container input::placeholder {
+  color: #666666 !important;
+  opacity: 1 !important;
+}
+
+.registro-container h2,
+.registro-container p,
+.registro-container .login-link,
+.registro-container span,
+[data-theme="dark"] .registro-container h2,
+[data-theme="dark"] .registro-container p,
+[data-theme="dark"] .registro-container .login-link,
+[data-theme="dark"] .registro-container span {
+  color: #000000 !important;
+  background-color: transparent !important;
+}
+
+.registro-container .primary-btn,
+[data-theme="dark"] .registro-container .primary-btn {
+  background-color: #008400 !important;
+  color: #ffffff !important;
+}
+
+.registro-container .primary-btn:hover,
+[data-theme="dark"] .registro-container .primary-btn:hover {
+  background-color: #00aa00 !important;
+}
+
+.registro-container .switch-user button.active,
+[data-theme="dark"] .registro-container .switch-user button.active {
+  background-color: #008400 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.registro-container .switch-user button,
+[data-theme="dark"] .registro-container .switch-user button {
+  background: #f4f4f4 !important;
+  color: #000000 !important;
+  border: 1px solid #ccc !important;
+}
+
+.registro-container .registro-image,
+[data-theme="dark"] .registro-container .registro-image {
+  background: #f4f4f4 !important;
+}
+
+.registro-container .erro,
+.registro-container .error-message,
+[data-theme="dark"] .registro-container .erro,
+[data-theme="dark"] .registro-container .error-message {
+  color: #d32f2f !important;
+  background: #ffeaea !important;
+  border: 1px solid #f5c2c7 !important;
+}
+
+.registro-container .sucesso,
+[data-theme="dark"] .registro-container .sucesso {
+  color: #008400 !important;
+  background-color: #ffffff !important;
+}
+
+.registro-container .toggle-password,
+[data-theme="dark"] .registro-container .toggle-password {
+  color: #008400 !important;
+}
+
+.registro-container .login-link a,
+[data-theme="dark"] .registro-container .login-link a {
+  color: #000 !important;
+}
+
+/* === ESTILOS DE LAYOUT CORRIGIDOS === */
+
+/* CONTAINER PRINCIPAL */
+.registro-container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+/* FORMULÁRIO */
+.registro-form {
+  flex: 1;
+  padding: 40px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Centraliza horizontalmente */
+  box-sizing: border-box;
+}
+
+/* NOVO: CABEÇALHO DO FORMULÁRIO */
+.registro-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+/* LOGO - CORRIGIDO */
+.registro-logo {
+  width: 60px; /* Um pouco maior para destaque */
+  height: auto;
+  /* position, top, left, z-index removidos */
+}
+
+/* TÍTULO - CORRIGIDO */
+h2 {
+  font-size: 2rem; /* Ajustado para melhor leitura */
+  font-weight: bold;
+  color: #000000;
+  margin: 0; /* Margem controlada pelo header */
+  text-align: left;
+}
+
+/* BOTÕES DE TROCA DE USUÁRIO */
+.switch-user {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  width: 100%;
+  max-width: 450px; /* Limite de largura para os botões */
+}
+
+.switch-user button {
+  flex: 1; /* Faz os botões ocuparem espaço igual */
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  background: #f4f4f4;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.switch-user button.active {
+  background-color: #008400;
+  color: #ffffff;
+  border: none;
+}
+
+/* CONTEÚDO DO FORMULÁRIO (INPUTS) */
+.form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 450px; /* Limite de largura para os inputs */
+}
+
+.form-content input {
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* BOTÃO PRINCIPAL */
+.primary-btn {
+  background-color: #008400;
+  color: #ffffff;
+  padding: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition:
+    background 0.3s ease,
+    transform 0.1s ease;
+}
+
+/* LINK DE LOGIN */
+.login-link {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 1rem;
+}
+
+.login-link a {
+  color: #000;
+  font-weight: bold;
+}
+
+/* IMAGEM DO LADO DIREITO */
+.registro-image {
+  flex: 1;
+  background: #f4f4f4;
+}
+
+.registro-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* MENSAGENS DE ERRO/SUCESSO */
+.erro,
+.error-message {
+  color: #d32f2f;
+  background: #ffeaea;
+  border: 1px solid #f5c2c7;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.sucesso {
+  color: #008400;
+  background: #e6f7e9;
+  border: 1px solid #c3e6cb;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* SENHA COM OLHO */
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-container input {
+  width: 100%;
+  padding-right: 45px;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transform: translateY(-50%);
+  font-size: 22px;
+  color: #008400;
+  transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+  color: #00aa00;
+}
+
+/* RESPONSIVO PARA TABLETS E SMARTPHONES */
+@media (max-width: 1024px) {
+    .registro-image {
+        /* Oculta a imagem lateral em telas de tablet para baixo */
+        display: none;
+    }
+    .registro-form {
+        /* Garante que o formulário ocupe toda a tela */
+        flex: auto;
+    }
+}
+
+@media (max-width: 480px) {
+  .registro-form {
+    padding: 20px;
+  }
+  
+  .registro-header {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .registro-logo {
+      width: 40px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-content {
+    gap: 12px;
+  }
+}

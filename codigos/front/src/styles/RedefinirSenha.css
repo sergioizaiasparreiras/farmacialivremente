@@ -1,0 +1,151 @@
+.meus-dados-container {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 100px auto;
+  animation: fadeIn 0.5s ease-in-out;
+  font-family: var(--font-body);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.meus-dados-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.meus-dados-header img {
+  width: 60px;
+  margin-right: 16px;
+}
+
+.meus-dados-header h2 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: var(--font-heading-3);
+  margin: 0;
+}
+
+.meus-dados-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.meus-dados-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-small);
+  font-weight: 500;
+  color: var(--text-primary);
+  gap: 0.3rem;
+}
+
+.meus-dados-form input,
+.meus-dados-form .imask-input {
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  padding: 0 10px;
+  font-size: var(--font-body);
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  transition: border-color 0.2s;
+}
+
+.meus-dados-form input:focus,
+.meus-dados-form .imask-input:focus {
+  border-color: #008400;
+  outline: none;
+}
+
+.alerta {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  animation: slideFade 0.4s ease;
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alerta.sucesso {
+  background-color: #e0f9e5;
+  color: #008400;
+  border: 1px solid #a3e6b4;
+}
+
+.alerta.erro {
+  background-color: #ffe6f9;
+  color: #d600d6;
+  border: 1px solid #f4aadf;
+}
+
+.botoes-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  gap: 1rem;
+}
+
+.botao-cancelar,
+.botao-salvar {
+  flex: 1;
+  height: 45px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.botao-cancelar {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+}
+
+.botao-cancelar:hover {
+  background-color: #333333;
+}
+
+.botao-salvar {
+  background-color: #008400;
+  color: #ffffff;
+  border: none;
+}
+
+.botao-salvar:hover {
+  background-color: #006e00;
+}
+
+@media (max-width: 480px) {
+  .meus-dados-container {
+    padding: 1rem;
+  }
+
+  .botoes-container {
+    flex-direction: column;
+  }
+}

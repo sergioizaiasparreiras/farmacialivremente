@@ -1,0 +1,527 @@
+.pagina-solicitar-orcamento {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+}
+
+.pagina-solicitar-orcamento h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--text-primary);
+}
+
+.conteudo-orcamento {
+  display: flex;
+  gap: 30px;
+}
+
+.coluna-formulario {
+  flex: 2;
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  padding: 25px;
+  border: 1px solid var(--border-color);
+}
+
+.coluna-resumo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formulario-orcamento {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.secao-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.secao-formulario h3 {
+  font-size: 18px;
+  color: var(--text-primary);
+  margin: 0 0 10px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.campo label {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.campo input,
+.campo textarea,
+.input-mask {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.2s;
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder,
+.input-mask::placeholder {
+  color: var(--text-secondary);
+}
+
+.campo input:focus,
+.campo textarea:focus,
+.input-mask:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.campo-arquivo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.campo-arquivo label {
+  color: var(--text-primary);
+}
+
+.area-upload {
+  border: 2px dashed var(--border-color);
+  padding: 20px;
+  border-radius: 4px;
+  text-align: center;
+  transition: border-color 0.2s;
+  background-color: var(--bg-tertiary);
+}
+
+.area-upload:hover {
+  border-color: var(--primary-color);
+}
+
+.area-upload input[type="file"] {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: none;
+  padding: 0;
+}
+
+.info-upload {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.contador-caracteres {
+  text-align: right;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.acoes-formulario {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-primary:disabled {
+  background-color: var(--text-secondary);
+  cursor: not-allowed;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.mensagem-alerta {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 4px;
+  background-color: rgba(248, 215, 218, 0.2);
+  color: #ff6b6b;
+  text-align: center;
+  border: 1px solid rgba(248, 215, 218, 0.3);
+}
+
+.resumo-pedido {
+  background-color: var(--bg-secondary) !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border: 1px solid var(--border-color);
+}
+
+/* Estilos específicos para tema escuro */
+[data-theme="dark"] .pagina-solicitar-orcamento .resumo-pedido {
+  background-color: #2d2d2d !important;
+  border: 1px solid #404040 !important;
+  color: #ffffff !important;
+}
+
+.resumo-pedido h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: var(--text-primary) !important;
+  font-size: 18px;
+}
+
+[data-theme="dark"] .pagina-solicitar-orcamento .resumo-pedido h3 {
+  color: #ffffff !important;
+}
+
+.itens-pedido {
+  margin-bottom: 15px;
+}
+
+.item-pedido {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-nome {
+  font-weight: 500;
+  color: var(--text-primary) !important;
+}
+
+.item-qtd {
+  color: var(--text-secondary) !important;
+  font-size: 14px;
+}
+
+.item-preco {
+  font-weight: 500;
+  color: var(--text-primary) !important;
+}
+
+.linha-divisoria {
+  height: 1px;
+  background-color: var(--border-color) !important;
+  margin: 15px 0;
+}
+
+.subtotal, .total-pedido, .frete-linha {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: var(--text-primary) !important;
+}
+
+.total-pedido {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.valor-total {
+  color: var(--success-color) !important;
+}
+
+.frete-linha {
+  color: var(--text-secondary) !important;
+  font-size: 14px;
+}
+
+[data-theme="dark"] .pagina-solicitar-orcamento .item-nome,
+[data-theme="dark"] .pagina-solicitar-orcamento .item-preco,
+[data-theme="dark"] .pagina-solicitar-orcamento .subtotal,
+[data-theme="dark"] .pagina-solicitar-orcamento .total-pedido {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .pagina-solicitar-orcamento .item-qtd,
+[data-theme="dark"] .pagina-solicitar-orcamento .frete-linha {
+  color: #cccccc !important;
+}
+
+[data-theme="dark"] .pagina-solicitar-orcamento .linha-divisoria {
+  background-color: #404040 !important;
+}
+
+[data-theme="dark"] .pagina-solicitar-orcamento .valor-total {
+  color: #4caf50 !important;
+}
+
+.info-orcamento {
+  background-color: var(--bg-secondary) !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .pagina-solicitar-orcamento .info-orcamento {
+  background-color: #2d2d2d !important;
+  border: 1px solid #404040 !important;
+}
+
+.info-orcamento h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: var(--text-primary) !important;
+  font-size: 18px;
+}
+
+.info-orcamento ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.info-orcamento li {
+  margin-bottom: 10px;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .pagina-solicitar-orcamento .info-orcamento h3,
+[data-theme="dark"] .pagina-solicitar-orcamento .info-orcamento li {
+  color: #ffffff !important;
+}
+
+.carregando {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: var(--text-secondary);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .conteudo-orcamento {
+    flex-direction: column;
+  }
+  
+  .coluna-formulario, .coluna-resumo {
+    width: 100%;
+  }
+  
+  .acoes-formulario {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .acoes-formulario button {
+    width: 100%;
+  }
+}
+
+/* Estilos para a tela de confirmação */
+.confirmacao-envio {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  border: 1px solid var(--border-color);
+}
+
+.icone-sucesso {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background-color: var(--success-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.confirmacao-envio h2 {
+  color: var(--success-color);
+  margin-bottom: 20px;
+}
+
+.confirmacao-envio p {
+  margin-bottom: 10px;
+  color: var(--text-primary);
+  font-size: 16px;
+}
+
+.confirmacao-envio p:last-child {
+  margin-top: 20px;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* Estilo para o alerta de fluxo misto */
+.alerta-fluxo-misto {
+  background-color: rgba(225, 245, 254, 0.1);
+  border-left: 4px solid var(--primary-color);
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: 1px solid rgba(225, 245, 254, 0.2);
+}
+
+.alerta-fluxo-misto p {
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.campo-duplo {
+  display: flex;
+  gap: 15px;
+}
+
+.campo-duplo .campo {
+  flex: 1;
+}
+
+@media (max-width: 576px) {
+  .campo-duplo {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+.buscando-cep {
+  font-size: 14px;
+  color: var(--primary-color);
+  font-style: italic;
+  margin-left: 5px;
+}
+
+/* Garantia adicional para o tema escuro */
+[data-theme="dark"] .pagina-solicitar-orcamento {
+  background-color: #1a1a1a !important;
+}
+
+[data-theme="dark"] .pagina-solicitar-orcamento .coluna-resumo > * {
+  background-color: #2d2d2d !important;
+  color: #ffffff !important;
+  border: 1px solid #404040 !important;
+}
+
+/* Modal de Confirmação */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-confirmacao {
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%;
+  border: 1px solid var(--border-color);
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-header {
+  padding: 20px 20px 10px 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 18px;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-body p {
+  margin: 0;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.modal-footer {
+  padding: 10px 20px 20px 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.modal-footer .btn-outline,
+.modal-footer .btn-primary {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+/* Tema escuro para modal */
+[data-theme="dark"] .modal-confirmacao {
+  background-color: #2d2d2d;
+  border: 1px solid #404040;
+}
+
+[data-theme="dark"] .modal-header {
+  border-bottom: 1px solid #404040;
+}
+
+[data-theme="dark"] .modal-header h3,
+[data-theme="dark"] .modal-body p {
+  color: #ffffff;
+}

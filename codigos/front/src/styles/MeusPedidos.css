@@ -1,0 +1,1354 @@
+/* Codigo/front/src/styles/MeusPedidos.css (Versão Corrigida) */
+
+.pagina-meus-pedidos {
+  /* MODIFICAÇÃO: Aumentado o padding-top para deixar espaço para a NavBar fixa de 80px */
+  padding: 120px 20px 40px 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #333333;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pagina-meus-pedidos h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #008400;
+}
+
+/* Cabeçalho com botão de atualizar */
+.cabecalho-pedidos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.cabecalho-pedidos h1 {
+  margin-bottom: 0;
+}
+
+.btn-atualizar {
+  padding: 8px 16px;
+  background-color: #008400;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.btn-atualizar:hover:not(:disabled) {
+  background-color: #006600;
+}
+
+.btn-atualizar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Filtros */
+.filtros-pedidos {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.filtros-pedidos button {
+  padding: 10px 20px;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  color: #333333;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filtros-pedidos button:hover {
+  background-color: #F5F5F5;
+}
+
+.filtros-pedidos button.ativo {
+  background-color: #008400;
+  color: #FFFFFF;
+  border-color: #008400;
+}
+
+/* Cards de pedidos */
+.lista-pedidos {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card-pedido {
+  border: 1px solid #DDDDDD;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #FFFFFF;
+  transition: all 0.2s ease;
+}
+
+.card-pedido:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.info-pedido {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.info-principal {
+  flex: 1;
+}
+
+.data-pedido {
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 8px;
+}
+
+.status-pedido {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.status-em-andamento .status-pedido {
+  color: #FF9900;
+}
+
+.status-pago .status-pedido {
+  color: #0066CC;
+}
+
+.status-entregue .status-pedido {
+  color: #008400;
+}
+
+.status-cancelado .status-pedido {
+  color: #E53935;
+}
+
+.status-compre-novamente .status-pedido {
+  color: #0066CC;
+}
+
+.acoes-pedido {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-primario {
+  padding: 8px 16px;
+  background-color: #008400;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primario:hover {
+  background-color: #006600;
+}
+
+.btn-secundario {
+  padding: 8px 16px;
+  background-color: #FFFFFF;
+  color: #008400;
+  border: 1px solid #008400;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secundario:hover {
+  background-color: #F0F8F0;
+}
+
+.btn-link {
+  padding: 8px 0;
+  background-color: transparent;
+  color: #0066CC;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: all 0.2s ease;
+}
+
+.btn-link:hover {
+  color: #004C99;
+}
+
+.info-secundaria {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 120px;
+}
+
+.numero-pedido {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.imagem-produto {
+  width: 80px;
+  height: 80px;
+  background-color: #F5F5F5;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logo-farmacia {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 4px;
+}
+
+/* Estado de carregamento */
+.carregando {
+  text-align: center;
+  padding: 40px 0;
+  color: #666666;
+}
+
+/* Sem pedidos */
+.sem-pedidos {
+  text-align: center;
+  padding: 40px 0;
+  color: #666666;
+  background-color: #F5F5F5;
+  border-radius: 8px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  /* MODIFICAÇÃO: Ajustado para navbar de 70px + 20px de espaço */
+  .pagina-meus-pedidos {
+    padding-top: 90px;
+  }
+  
+  .cabecalho-pedidos {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .btn-atualizar {
+    align-self: flex-end;
+  }
+  
+  .info-pedido {
+    flex-direction: column;
+  }
+  
+  .info-secundaria {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #EEEEEE;
+  }
+  
+  .imagem-produto {
+    margin-top: 0;
+  }
+  
+  .acoes-pedido {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .acoes-pedido button {
+    width: 100%;
+  }
+}
+
+/* Estilos do Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #EEEEEE;
+  background-color: #F8F9FA;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #008400;
+}
+
+.btn-fechar {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666666;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.btn-fechar:hover {
+  background-color: #E0E0E0;
+  color: #333333;
+}
+
+.modal-body {
+  padding: 24px;
+  max-height: calc(90vh - 80px);
+  overflow-y: auto;
+}
+
+.data-pedido-modal {
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+/* Estilos para Modal de Produtos */
+.lista-produtos-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item-produto-modal {
+  border: 1px solid #EEEEEE;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #FAFAFA;
+}
+
+.produto-info {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.imagem-produto-modal {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #DDDDDD;
+}
+
+.placeholder-imagem-modal {
+  width: 80px;
+  height: 80px;
+  background-color: #F0F0F0;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #666666;
+}
+
+.detalhes-produto-modal {
+  flex: 1;
+}
+
+.detalhes-produto-modal h3 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.detalhes-produto-modal p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #666666;
+}
+
+.detalhes-produto-modal .subtotal {
+  font-weight: 600;
+  color: #008400;
+}
+
+.sem-produtos {
+  text-align: center;
+  padding: 40px 0;
+  color: #666666;
+  font-style: italic;
+}
+
+/* Estilos para Modal de Detalhes */
+.detalhes-pedido-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.secao-detalhes {
+  padding: 16px;
+  border: 1px solid #EEEEEE;
+  border-radius: 8px;
+  background-color: #FAFAFA;
+}
+
+.secao-detalhes h3 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #008400;
+  border-bottom: 1px solid #DDDDDD;
+  padding-bottom: 8px;
+}
+
+.secao-detalhes p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #333333;
+}
+
+.secao-detalhes strong {
+  color: #333333;
+  font-weight: 600;
+}
+
+.total-final {
+  font-size: 16px;
+  font-weight: 700;
+  color: #008400;
+  border-top: 1px solid #DDDDDD;
+  padding-top: 8px;
+  margin-top: 8px;
+}
+
+.resumo-produtos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.produto-resumo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: #FFFFFF;
+  border: 1px solid #EEEEEE;
+  border-radius: 4px;
+}
+
+.nome-produto {
+  flex: 1;
+  font-size: 14px;
+  color: #333333;
+}
+
+.quantidade-produto {
+  font-size: 14px;
+  color: #666666;
+  margin: 0 12px;
+}
+
+.preco-produto {
+  font-size: 14px;
+  font-weight: 600;
+  color: #008400;
+}
+
+/* Responsividade para Modal */
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 10px;
+  }
+  
+  .modal-content {
+    max-height: 95vh;
+  }
+  
+  .modal-header {
+    padding: 16px 20px;
+  }
+  
+  .modal-header h2 {
+    font-size: 18px;
+  }
+  
+  .modal-body {
+    padding: 20px;
+  }
+  
+  .produto-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .imagem-produto-modal,
+  .placeholder-imagem-modal {
+    width: 100%;
+    height: 120px;
+  }
+  
+  .produto-resumo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .quantidade-produto {
+    margin: 0;
+  }
+}
+
+/* Estilos para tema escuro */
+[data-theme="dark"] .pagina-meus-pedidos {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .pagina-meus-pedidos h1 {
+  color: #4CAF50;
+}
+
+/* Container no tema escuro */
+[data-theme="dark"] .container {
+  background-color: #1a1a1a;
+}
+
+/* Imagem do produto no tema escuro */
+[data-theme="dark"] .imagem-produto {
+  background-color: #404040;
+  border-color: #555555;
+}
+
+/* Área sem pedidos no tema escuro */
+[data-theme="dark"] .sem-pedidos {
+  background-color: #2d2d2d;
+  border: 1px solid #404040;
+  color: #ffffff;
+}
+
+/* Info secundária no tema escuro */
+[data-theme="dark"] .info-secundaria {
+  color: #ffffff;
+}
+
+/* Total do pedido com destaque verde */
+[data-theme="dark"] .info-secundaria .total-pedido,
+[data-theme="dark"] .total-pedido {
+  color: #4CAF50;
+  font-weight: 700;
+}
+
+/* Filtros no tema escuro */
+[data-theme="dark"] .filtros-pedidos button {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  border-color: #404040;
+}
+
+[data-theme="dark"] .filtros-pedidos button:hover {
+  background-color: #3d3d3d;
+}
+
+[data-theme="dark"] .filtros-pedidos button.ativo {
+  background-color: #4CAF50;
+  color: #ffffff;
+  border-color: #4CAF50;
+}
+
+/* Cards dos pedidos no tema escuro */
+[data-theme="dark"] .card-pedido {
+  background-color: #2d2d2d !important;
+  border-color: #404040 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .card-pedido:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+  background-color: #353535 !important;
+}
+
+/* Cards com status específicos no tema escuro */
+[data-theme="dark"] .card-pedido.status-em-andamento,
+[data-theme="dark"] .card-pedido.status-pago,
+[data-theme="dark"] .card-pedido.status-entregue,
+[data-theme="dark"] .card-pedido.status-cancelado,
+[data-theme="dark"] .card-pedido.status-compre-novamente {
+  background-color: #2d2d2d !important;
+  border-color: #404040 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .card-pedido.status-em-andamento:hover,
+[data-theme="dark"] .card-pedido.status-pago:hover,
+[data-theme="dark"] .card-pedido.status-entregue:hover,
+[data-theme="dark"] .card-pedido.status-cancelado:hover,
+[data-theme="dark"] .card-pedido.status-compre-novamente:hover {
+  background-color: #353535 !important;
+}
+
+/* Textos dos pedidos em branco para destaque */
+[data-theme="dark"] .data-pedido {
+  color: #b0b0b0;
+}
+
+[data-theme="dark"] .status-pedido {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .numero-pedido {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .total-pedido {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Botões no tema escuro */
+[data-theme="dark"] .btn-atualizar {
+  background-color: #4CAF50;
+}
+
+[data-theme="dark"] .btn-atualizar:hover:not(:disabled) {
+  background-color: #45a049;
+}
+
+[data-theme="dark"] .btn-primario {
+  background-color: #4CAF50;
+}
+
+[data-theme="dark"] .btn-primario:hover {
+  background-color: #45a049;
+}
+
+[data-theme="dark"] .btn-secundario {
+  background-color: #2d2d2d;
+  color: #4CAF50;
+  border-color: #4CAF50;
+}
+
+[data-theme="dark"] .btn-secundario:hover {
+  background-color: #1e3a1e;
+}
+
+[data-theme="dark"] .btn-link {
+  color: #66b3ff;
+}
+
+[data-theme="dark"] .btn-link:hover {
+  color: #4da6ff;
+}
+
+/* Estados de loading no tema escuro */
+[data-theme="dark"] .carregando,
+[data-theme="dark"] .sem-pedidos {
+  color: #ffffff;
+}
+
+/* Modais no tema escuro */
+[data-theme="dark"] .modal-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="dark"] .modal-content {
+  background-color: #2d2d2d;
+  border-color: #404040;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .modal-header {
+  border-bottom-color: #404040;
+}
+
+[data-theme="dark"] .modal-header h2 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .btn-fechar {
+  color: #ffffff;
+  background-color: #404040;
+}
+
+[data-theme="dark"] .btn-fechar:hover {
+  background-color: #555555;
+}
+
+/* Produtos no modal - tema escuro */
+[data-theme="dark"] .data-pedido-modal {
+  color: #b0b0b0;
+}
+
+[data-theme="dark"] .item-produto-modal {
+  background-color: #353535;
+  border-color: #404040;
+}
+
+[data-theme="dark"] .placeholder-imagem-modal {
+  background-color: #404040;
+  color: #b0b0b0;
+}
+
+[data-theme="dark"] .detalhes-produto-modal h3 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .detalhes-produto-modal p {
+  color: #b0b0b0;
+}
+
+[data-theme="dark"] .detalhes-produto-modal .subtotal {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .sem-produtos {
+  color: #b0b0b0;
+}
+
+/* Detalhes do pedido no modal - tema escuro - ESPECÍFICO */
+[data-theme="dark"] .modal-content .detalhes-pedido-modal {
+  background-color: #2d2d2d !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .modal-content .secao-detalhes {
+  background-color: #353535 !important;
+  border-color: #404040 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .modal-content .secao-detalhes h3 {
+  color: #4CAF50 !important;
+  border-bottom-color: #404040 !important;
+}
+
+[data-theme="dark"] .modal-content .secao-detalhes p {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .modal-content .secao-detalhes strong {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .modal-content .total-final {
+  color: #4CAF50 !important;
+  border-top-color: #404040 !important;
+}
+
+[data-theme="dark"] .modal-content .resumo-produtos {
+  background-color: transparent !important;
+}
+
+[data-theme="dark"] .modal-content .produto-resumo {
+  background-color: #404040 !important;
+  border-color: #555555 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .modal-content .nome-produto {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .modal-content .quantidade-produto {
+  color: #b0b0b0 !important;
+}
+
+[data-theme="dark"] .modal-content .preco-produto {
+  color: #4CAF50 !important;
+  font-weight: 600 !important;
+}
+
+/* Forçar background em todos os elementos internos do modal */
+[data-theme="dark"] .modal-content .secao-detalhes * {
+  background-color: inherit !important;
+}
+
+/* Garantir que não haja override de background por outros estilos */
+[data-theme="dark"] .detalhes-pedido-modal .secao-detalhes {
+  background-color: #353535 !important;
+  border: 1px solid #404040 !important;
+}
+
+/* Override específico para elementos que podem estar herdando background branco */
+[data-theme="dark"] .pagina-meus-pedidos .modal-content .secao-detalhes {
+  background-color: #353535 !important;
+  border-color: #404040 !important;
+}
+
+[data-theme="dark"] .pagina-meus-pedidos .modal-content .detalhes-pedido-modal {
+  background-color: #2d2d2d !important;
+}
+
+/* Responsividade para tema escuro */
+@media (max-width: 768px) {
+  [data-theme="dark"] .info-secundaria {
+    border-top-color: #404040;
+  }
+}
+
+/* Lista de pedidos no tema escuro */
+[data-theme="dark"] .lista-pedidos {
+  background-color: transparent !important;
+}
+
+/* Info do pedido no tema escuro */
+[data-theme="dark"] .info-pedido {
+  background-color: transparent !important;
+  color: #ffffff !important;
+}
+
+/* Info principal e secundária no tema escuro */
+[data-theme="dark"] .info-principal,
+[data-theme="dark"] .info-secundaria {
+  background-color: transparent !important;
+  color: #ffffff !important;
+}
+
+/* Ações do pedido no tema escuro */
+[data-theme="dark"] .acoes-pedido {
+  background-color: transparent !important;
+}
+
+/* Forçar fundo escuro para todos os elementos dentro dos cards */
+[data-theme="dark"] .card-pedido *,
+[data-theme="dark"] .card-pedido *::before,
+[data-theme="dark"] .card-pedido *::after {
+  background-color: inherit !important;
+}
+
+/* Garantir que o card em si mantenha o fundo escuro */
+[data-theme="dark"] .card-pedido {
+  background-color: #2d2d2d !important;
+}
+
+/* Modal header - tema escuro */
+[data-theme="dark"] .modal-content .modal-header {
+  background-color: #2d2d2d !important;
+  border-bottom-color: #404040 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .modal-content .modal-header h2 {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .modal-content .btn-fechar {
+  background-color: #404040 !important;
+  color: #ffffff !important;
+  border-color: #555555 !important;
+}
+
+[data-theme="dark"] .modal-content .btn-fechar:hover {
+  background-color: #555555 !important;
+  color: #ffffff !important;
+}
+
+/* Modal body - tema escuro */
+[data-theme="dark"] .modal-content .modal-body {
+  background-color: #2d2d2d !important;
+  color: #ffffff !important;
+}
+
+/* Detalhes do pedido no modal - tema escuro - ESPECÍFICO */
+[data-theme="dark"] .modal-content .detalhes-pedido-modal {
+  background-color: #2d2d2d !important;
+  color: #ffffff !important;
+}
+
+/* Media queries específicas para celulares pequenos e tablets */
+@media (max-width: 480px) {
+  /* MODIFICAÇÃO: Ajustado para navbar de 60px + 20px de espaço */
+  .pagina-meus-pedidos {
+    padding-top: 80px; 
+  }
+  .container {
+    padding: 16px;
+  }
+
+  .cabecalho-pedidos {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .cabecalho-pedidos h1 {
+    font-size: 1.5rem;
+  }
+
+  .btn-atualizar {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .filtros-pedidos {
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .filtros-pedidos button {
+    padding: 8px 12px;
+    font-size: 13px;
+    flex: 1;
+    min-width: 80px;
+  }
+
+  .lista-pedidos {
+    gap: 16px;
+  }
+
+  .card-pedido {
+    padding: 16px;
+  }
+
+  .info-pedido {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .info-principal {
+    gap: 8px;
+  }
+
+  .data-pedido {
+    font-size: 0.9rem;
+  }
+
+  .status-pedido {
+    font-size: 0.85rem;
+    padding: 4px 8px;
+  }
+
+  .info-secundaria {
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 12px;
+  }
+
+  .numero-pedido {
+    font-size: 0.85rem;
+  }
+
+  .total-pedido {
+    font-size: 0.9rem;
+  }
+
+  .imagem-produto {
+    width: 50px;
+    height: 50px;
+  }
+
+  .acoes-pedido {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .acoes-pedido button {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .carregando {
+    padding: 30px;
+    font-size: 16px;
+  }
+
+  .sem-pedidos {
+    padding: 30px 20px;
+    font-size: 16px;
+  }
+
+  /* Modal responsivo */
+  .modal-content {
+    width: 95%;
+    max-width: 320px;
+    margin: 20px auto;
+  }
+
+  .modal-header {
+    padding: 16px;
+  }
+
+  .modal-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .btn-fechar {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  .modal-body {
+    padding: 16px;
+  }
+
+  .data-pedido-modal {
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+  }
+
+  .item-produto-modal {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .produto-info {
+    gap: 8px;
+  }
+
+  .imagem-produto-modal,
+  .placeholder-imagem-modal {
+    width: 60px;
+    height: 60px;
+  }
+
+  .detalhes-produto-modal h3 {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+  }
+
+  .detalhes-produto-modal p {
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+  }
+
+  .detalhes-produto-modal .subtotal {
+    font-size: 0.9rem;
+  }
+
+  .sem-produtos {
+    font-size: 14px;
+    padding: 20px;
+  }
+
+  .detalhes-pedido-modal {
+    padding: 16px;
+  }
+
+  .secao-detalhes {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  .secao-detalhes h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+  }
+
+  .secao-detalhes p {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+  }
+
+  .secao-detalhes strong {
+    font-size: 0.85rem;
+  }
+
+  .total-final {
+    font-size: 1rem;
+    padding-top: 8px;
+    margin-top: 12px;
+  }
+
+  .produto-resumo {
+    padding: 10px;
+    margin-bottom: 8px;
+  }
+
+  .nome-produto {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+  }
+
+  .quantidade-produto {
+    font-size: 0.8rem;
+  }
+
+  .preco-produto {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  /* MODIFICAÇÃO: Ajustado para navbar de 70px + 20px de espaço */
+  .pagina-meus-pedidos {
+    padding-top: 90px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .cabecalho-pedidos {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .cabecalho-pedidos h1 {
+    font-size: 1.7rem;
+  }
+
+  .btn-atualizar {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+
+  .filtros-pedidos {
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .filtros-pedidos button {
+    padding: 10px 16px;
+    font-size: 14px;
+    flex: 1;
+    min-width: 100px;
+  }
+
+  .lista-pedidos {
+    gap: 20px;
+  }
+
+  .card-pedido {
+    padding: 20px;
+  }
+
+  .info-pedido {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .info-principal {
+    gap: 10px;
+  }
+
+  .data-pedido {
+    font-size: 0.95rem;
+  }
+
+  .status-pedido {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  .info-secundaria {
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 16px;
+  }
+
+  .numero-pedido {
+    font-size: 0.9rem;
+  }
+
+  .total-pedido {
+    font-size: 0.95rem;
+  }
+
+  .imagem-produto {
+    width: 60px;
+    height: 60px;
+  }
+
+  .acoes-pedido {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .acoes-pedido button {
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .carregando {
+    padding: 35px;
+    font-size: 17px;
+  }
+
+  .sem-pedidos {
+    padding: 35px 25px;
+    font-size: 17px;
+  }
+
+  /* Modal responsivo */
+  .modal-content {
+    width: 90%;
+    max-width: 400px;
+    margin: 30px auto;
+  }
+
+  .modal-header {
+    padding: 20px;
+  }
+
+  .modal-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .btn-fechar {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .modal-body {
+    padding: 20px;
+  }
+
+  .data-pedido-modal {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .item-produto-modal {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .produto-info {
+    gap: 12px;
+  }
+
+  .imagem-produto-modal,
+  .placeholder-imagem-modal {
+    width: 70px;
+    height: 70px;
+  }
+
+  .detalhes-produto-modal h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .detalhes-produto-modal p {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+
+  .detalhes-produto-modal .subtotal {
+    font-size: 0.95rem;
+  }
+
+  .sem-produtos {
+    font-size: 15px;
+    padding: 25px;
+  }
+
+  .detalhes-pedido-modal {
+    padding: 20px;
+  }
+
+  .secao-detalhes {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .secao-detalhes h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+  }
+
+  .secao-detalhes p {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+
+  .secao-detalhes strong {
+    font-size: 0.9rem;
+  }
+
+  .total-final {
+    font-size: 1.1rem;
+    padding-top: 10px;
+    margin-top: 16px;
+  }
+
+  .produto-resumo {
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+
+  .nome-produto {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+  }
+
+  .quantidade-produto {
+    font-size: 0.85rem;
+  }
+
+  .preco-produto {
+    font-size: 0.95rem;
+  }
+}

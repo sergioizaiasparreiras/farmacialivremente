@@ -1,0 +1,278 @@
+.lista-produtos {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 250px;
+  height: 100%;
+  background-color: #f9f9f9 !important;
+  border: 1px solid #e5e7eb !important;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+span.produto-item {
+  padding: 0.75rem 1rem !important;
+  background-color: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 0.375rem !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  color: #000000 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease-in-out !important;
+  text-align: center !important;
+  user-select: none !important;
+  display: block !important;
+}
+
+/* Forçar visibilidade no modo claro */
+[data-theme="light"] span.produto-item,
+html:not([data-theme="dark"]) span.produto-item,
+[data-theme="light"] .lista-produtos span,
+html:not([data-theme="dark"]) .lista-produtos span,
+[data-theme="light"] .lista-produtos .produto-item,
+html:not([data-theme="dark"]) .lista-produtos .produto-item {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: #e5e7eb !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Hover para modo claro - APENAS para filtros laterais */
+.principalProdutos .lista_Produtos .lista-produtos span:hover,
+.lista_Produtos .lista-produtos span:hover,
+.principalProdutos .lista_Produtos .lista-produtos .produto-item:hover,
+.lista_Produtos .lista-produtos .produto-item:hover {
+  background: linear-gradient(145deg, #008400, #00a000) !important;
+  color: #ffffff !important;
+  border: 2px solid #008400 !important;
+  transform: translateX(3px) scale(1.02) !important;
+  box-shadow: 0 4px 8px rgba(0, 132, 0, 0.4) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: 600 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+  min-height: 44px !important;
+  font-size: 1rem !important;
+}
+
+/* Regras adicionais para garantir visibilidade - APENAS filtros laterais */
+.principalProdutos .lista_Produtos .lista-produtos span:hover::before,
+.lista_Produtos .lista-produtos span:hover::before {
+  content: none !important;
+}
+
+.principalProdutos .lista_Produtos .lista-produtos span:hover::after,
+.lista_Produtos .lista-produtos span:hover::after {
+  content: none !important;
+}
+
+/* REGRA ESPECÍFICA APENAS PARA FILTROS LATERAIS */
+.principalProdutos .lista_Produtos .lista-produtos *:hover,
+.lista_Produtos .lista-produtos *:hover {
+  color: #ffffff !important;
+  background-color: #008400 !important;
+}
+
+/* Forçar apenas no conteúdo de texto dos filtros laterais */
+.principalProdutos .lista_Produtos .lista-produtos span:hover,
+.lista_Produtos .lista-produtos span:hover {
+  background-color: #008400 !important;
+  color: #ffffff !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  line-height: 1.5 !important;
+}
+
+/* Estado ativo para modo claro - APENAS filtros laterais */
+.principalProdutos .lista_Produtos .lista-produtos span.ativo,
+.lista_Produtos .lista-produtos span.ativo,
+.principalProdutos .lista_Produtos .lista-produtos .produto-item.ativo,
+.lista_Produtos .lista-produtos .produto-item.ativo {
+  background: linear-gradient(145deg, #008400, #00a000) !important;
+  color: #ffffff !important;
+  border: 2px solid #008400 !important;
+  transform: translateX(3px) scale(1.02) !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 8px rgba(0, 132, 0, 0.4) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+  min-height: 44px !important;
+  font-size: 1rem !important;
+}
+
+/* Regras específicas para forçar o tema escuro */
+[data-theme="dark"] .lista-produtos {
+  background-color: #2d2d2d !important;
+  border-color: #444 !important;
+}
+
+[data-theme="dark"] span.produto-item {
+  background-color: #3a3a3a !important;
+  color: #ffffff !important;
+  border-color: #555 !important;
+}
+
+[data-theme="dark"] span.produto-item:hover {
+  background-color: #008400 !important;
+  color: #ffffff !important;
+  border-color: #008400 !important;
+}
+
+[data-theme="dark"] span.produto-item.ativo {
+  background-color: #008400 !important;
+  color: #ffffff !important;
+  border-color: #008400 !important;
+}
+
+/* Forçar visibilidade no modo claro */
+[data-theme="light"] .lista-produtos,
+html:not([data-theme="dark"]) .lista-produtos {
+  background-color: #f9f9f9 !important;
+  border-color: #e5e7eb !important;
+}
+
+/* Essas regras foram movidas para cima com melhor especificidade */
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .lista-produtos {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  span.produto-item {
+    flex: 1;
+    min-width: 120px;
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  span.produto-item:hover,
+  span.produto-item.ativo {
+    transform: translateY(-2px) !important;
+  }
+}
+
+/* CORREÇÃO FINAL - FORÇAR VISIBILIDADE ABSOLUTA */
+.lista-produtos span,
+.lista-produtos .produto-item,
+span.produto-item,
+.produto-item {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+  opacity: 1 !important;
+  display: block !important;
+  visibility: visible !important;
+  min-height: 44px !important;
+  line-height: 1.4 !important;
+  box-sizing: border-box !important;
+}
+
+/* FORÇAR ESTILO NO MODO ESCURO COM MÁXIMA ESPECIFICIDADE */
+[data-theme="dark"] body .lista-produtos,
+[data-theme="dark"] html .lista-produtos,
+[data-theme="dark"] .principalProdutos .lista_Produtos .lista-produtos {
+  background: linear-gradient(145deg, #2d2d2d, #343a40) !important;
+  border: 2px solid #555555 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] body .lista-produtos span,
+[data-theme="dark"] body .lista-produtos .produto-item,
+[data-theme="dark"] body span.produto-item,
+[data-theme="dark"] body .produto-item,
+[data-theme="dark"] html .lista-produtos span,
+[data-theme="dark"] html .lista-produtos .produto-item,
+[data-theme="dark"] html span.produto-item,
+[data-theme="dark"] html .produto-item,
+[data-theme="dark"] .principalProdutos .lista_Produtos .lista-produtos span,
+[data-theme="dark"] .principalProdutos .lista_Produtos .lista-produtos .produto-item {
+  color: #ffffff !important;
+  background: linear-gradient(145deg, #4a4a4a, #555555) !important;
+  border: 2px solid #666666 !important;
+  font-weight: 500 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+  min-height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+[data-theme="dark"] body .lista-produtos span:hover,
+[data-theme="dark"] body .lista-produtos .produto-item:hover,
+[data-theme="dark"] body span.produto-item:hover,
+[data-theme="dark"] body .produto-item:hover,
+[data-theme="dark"] html .lista-produtos span:hover,
+[data-theme="dark"] html .lista-produtos .produto-item:hover,
+[data-theme="dark"] html span.produto-item:hover,
+[data-theme="dark"] html .produto-item:hover {
+  background: linear-gradient(145deg, #00c853, #4caf50) !important;
+  color: #ffffff !important;
+  border-color: #00c853 !important;
+  transform: translateX(3px) scale(1.02) !important;
+  box-shadow: 0 4px 12px rgba(0, 200, 83, 0.4) !important;
+}
+
+[data-theme="dark"] body .lista-produtos span.ativo,
+[data-theme="dark"] body .lista-produtos .produto-item.ativo,
+[data-theme="dark"] body span.produto-item.ativo,
+[data-theme="dark"] body .produto-item.ativo,
+[data-theme="dark"] html .lista-produtos span.ativo,
+[data-theme="dark"] html .lista-produtos .produto-item.ativo,
+[data-theme="dark"] html span.produto-item.ativo,
+[data-theme="dark"] html .produto-item.ativo {
+  background: linear-gradient(145deg, #00c853, #4caf50) !important;
+  color: #ffffff !important;
+  border-color: #00c853 !important;
+  font-weight: 700 !important;
+  transform: translateX(3px) scale(1.02) !important;
+  box-shadow: 0 4px 12px rgba(0, 200, 83, 0.4) !important;
+}
+
+/* CORREÇÃO FINAL ABSOLUTA - APENAS para filtros laterais */
+.principalProdutos .lista_Produtos .lista-produtos span:hover,
+.lista_Produtos .lista-produtos span:hover,
+.principalProdutos .lista_Produtos .produto-item:hover,
+.lista_Produtos .produto-item:hover {
+  background: #008400 !important;
+  color: #ffffff !important;
+  border: 2px solid #006600 !important;
+  padding: 12px 16px !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  min-height: 44px !important;
+  line-height: 1.4 !important;
+}
+
+/* Garantir que o texto apareça mesmo com pseudo-elementos - APENAS filtros laterais */
+.principalProdutos .lista_Produtos .lista-produtos span:hover::before,
+.principalProdutos .lista_Produtos .lista-produtos span:hover::after,
+.lista_Produtos .lista-produtos span:hover::before,
+.lista_Produtos .lista-produtos span:hover::after {
+  display: none !important;
+  content: "" !important;
+}

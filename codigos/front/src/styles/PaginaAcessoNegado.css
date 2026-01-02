@@ -1,0 +1,78 @@
+/* PaginaAcessoNegado.css */
+.pagina-acesso-negado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  font-family: var(--font-family);
+}
+
+.container-acesso-negado {
+  background-color: var(--color-light);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.pagina-acesso-negado h1 {
+  color: #dc3545;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.pagina-acesso-negado p {
+  color: var(--color-dark);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.acoes-acesso-negado {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.btn-primario {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.btn-primario:hover {
+  background-color: #006e00;
+}
+
+.btn-secundario {
+  background-color: transparent;
+  color: var(--color-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  border: 1px solid var(--color-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-secundario:hover {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+}
+
+@media (max-width: 768px) {
+  .container-acesso-negado {
+    padding: 2rem;
+    margin: 1rem;
+  }
+  
+  .pagina-acesso-negado h1 {
+    font-size: 2rem;
+  }
+}

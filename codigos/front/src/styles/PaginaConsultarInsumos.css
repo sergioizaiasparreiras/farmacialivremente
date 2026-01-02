@@ -1,0 +1,206 @@
+/* PaginaConsultarInsumos.css */
+:root {
+  --color-primary: #008400;
+  --color-secondary: #D600D6;
+  --color-light: #FFFFFF;
+  --color-dark: #000000;
+  --font-family: 'Arial', sans-serif;
+}
+
+.pagina-consultar-insumos {
+  padding: 2rem;
+  font-family: var(--font-family);
+  max-width: 1200px;
+  margin: 0 auto;
+  color: var(--color-dark);
+}
+
+.pagina-consultar-insumos h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.acoes-consulta {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.campo-busca {
+  position: relative;
+  width: 100%;
+}
+
+.icone-busca {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+.campo-busca input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.campo-busca input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.filtros {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.filtro-disponibilidade {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filtro-disponibilidade label {
+  font-weight: 500;
+}
+
+.filtro-disponibilidade select {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: var(--color-light);
+}
+
+.btn-exportar {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.btn-exportar:hover {
+  background-color: #006e00;
+}
+
+.tabela-insumos {
+  background-color: var(--color-light);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #f5f5f5;
+}
+
+th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-dark);
+  border-bottom: 2px solid #ddd;
+}
+
+td {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr.indisponivel {
+  background-color: #fff8f8;
+}
+
+.status {
+  font-weight: 500;
+}
+
+.status.disponivel {
+  color: var(--color-primary);
+}
+
+.status.indisponivel {
+  color: #dc3545;
+}
+
+.carregando {
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+.mensagem-erro {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #f5c6cb;
+}
+
+.sem-resultados {
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .pagina-consultar-insumos {
+    padding: 1.5rem;
+  }
+  
+  .tabela-insumos {
+    overflow-x: auto;
+  }
+  
+  table {
+    min-width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pagina-consultar-insumos {
+    padding: 1rem;
+  }
+  
+  .pagina-consultar-insumos h1 {
+    font-size: 2rem;
+  }
+  
+  .filtros {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .btn-exportar {
+    width: 100%;
+    justify-content: center;
+  }
+}

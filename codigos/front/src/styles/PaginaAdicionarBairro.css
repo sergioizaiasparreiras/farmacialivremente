@@ -1,0 +1,128 @@
+/* PaginaAdicionarBairro.css */
+:root {
+  --color-primary: #008400;
+  --color-secondary: #D600D6;
+  --color-light: #FFFFFF;
+  --color-dark: #000000;
+  --font-family: 'Arial', sans-serif;
+}
+
+.pagina-adicionar-bairro {
+  padding: 2rem;
+  font-family: var(--font-family);
+  max-width: 1200px;
+  margin: 0 auto;
+  color: var(--color-dark);
+}
+
+.pagina-adicionar-bairro h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.formulario-container {
+  background-color: var(--color-light);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.campo-formulario {
+  margin-bottom: 1.5rem;
+}
+
+.campo-formulario label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.campo-formulario input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.campo-formulario input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.mensagem-erro {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #f5c6cb;
+}
+
+.acoes-formulario {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.btn-cancelar {
+  background-color: #6c757d;
+  color: var(--color-light);
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.btn-cancelar:hover {
+  background-color: #5a6268;
+}
+
+.btn-salvar {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.btn-salvar:hover {
+  background-color: #006e00;
+}
+
+.btn-salvar:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .pagina-adicionar-bairro {
+    padding: 1rem;
+  }
+  
+  .pagina-adicionar-bairro h1 {
+    font-size: 2rem;
+  }
+  
+  .formulario-container {
+    padding: 1.5rem;
+  }
+  
+  .acoes-formulario {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .acoes-formulario button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,218 @@
+.cadastrar-produto-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 30px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Forçar visibilidade de todos os textos e labels */
+.cadastrar-produto-container label,
+.cadastrar-produto-container p,
+.form-group label,
+.form-group-inline p,
+.produto-form label,
+.produto-form p {
+  color: #000 !important;
+  font-weight: 600 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+
+.cadastrar-produto-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #000 !important;
+}
+
+.produto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 500;
+  font-size: 14px;
+  color: #000 !important;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select,
+.cadastrar-produto-container input,
+.cadastrar-produto-container textarea,
+.cadastrar-produto-container select {
+  padding: 10px 12px !important;
+  border: 1px solid #ccc !important;
+  border-radius: 4px !important;
+  font-size: 14px !important;
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  color: #000 !important;
+  opacity: 1 !important;
+  box-shadow: none !important;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-group-inline {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group-inline p {
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0;
+  color: #000 !important;
+}
+
+.radio-group {
+  display: flex;
+  gap: 10px;
+}
+
+.radio-button {
+  padding: 8px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #ffffff !important;
+  color: #000 !important;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.radio-button:hover {
+  opacity: 0.9;
+}
+
+.radio-button.active {
+  background-color: #008400 !important;
+  color: #ffffff !important;
+  border-color: #008400;
+}
+
+.btn-upload {
+  width: 100%;
+  padding: 15px;
+  border: 1px dashed #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  text-align: center;
+  color: #000 !important;
+  transition: all 0.2s;
+}
+
+.btn-upload:hover {
+  border-color: #008400;
+  color: #008400 !important;
+  background-color: #f0f7f0;
+}
+
+/* Estilo para o preview da imagem */
+.preview-imagem {
+  margin-top: 20px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  object-fit: cover;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn-cancelar,
+.btn-salvar {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 150px;
+}
+
+.btn-cancelar {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-cancelar:hover {
+  background-color: #5a6268;
+}
+
+.btn-salvar {
+  background-color: #008400;
+  color: white;
+}
+
+.btn-salvar:hover {
+  background-color: #006e00;
+}
+
+.categorias-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.categoria-button {
+  padding: 8px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #ffffff !important;
+  color: #000 !important;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.categoria-button:hover {
+  opacity: 0.9;
+}
+
+.categoria-button.active {
+  background-color: #008400 !important;
+  color: #ffffff !important;
+  border-color: #008400;
+}
+
+/* Regra geral para garantir visibilidade máxima */
+.cadastrar-produto-container *:not(.radio-button.active):not(.categoria-button.active):not(.btn-salvar):not(.btn-cancelar) {
+  color: #000 !important;
+}
+
+/* Labels específicos devem sempre aparecer */
+label[for], label {
+  color: #000 !important;
+  font-weight: 600 !important;
+  display: block !important;
+  opacity: 1 !important;
+}
+
+/* Textos de seções */
+p {
+  color: #000 !important;
+  opacity: 1 !important;
+}

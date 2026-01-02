@@ -1,0 +1,512 @@
+.nav {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px var(--shadow-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Aumento da logo */
+.img_Logo img {
+  width: 70px;
+  left: 16px;
+  top: 20px;
+}
+
+#titulo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #008400;
+  margin: 0;
+}
+
+.saudacao-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.saudacao-completa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.barraPesquisa input {
+  width: 100%;
+  max-width: 600px;
+  height: 50px;
+  padding: 0 14px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(0, 132, 0, 0.1), rgba(0, 132, 0, 0.05));
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 132, 0, 0.2);
+  animation: fadeInUp 0.8s ease-out;
+  transition: all 0.3s ease;
+}
+
+.saudacao-completa:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 132, 0, 0.15);
+}
+
+.saudacao-icone {
+  display: flex;
+  align-items: center;
+  animation: bounce 2s infinite;
+}
+
+.saudacao-texto {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+  transition: color 0.3s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Cores específicas por período */
+.saudacao-completa.manha {
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.15), rgba(255, 235, 59, 0.1));
+  border-color: rgba(255, 193, 7, 0.3);
+}
+
+.saudacao-completa.manha .saudacao-icone {
+  color: #ffc107;
+  filter: drop-shadow(0 2px 4px rgba(255, 193, 7, 0.3));
+}
+
+.saudacao-completa.tarde {
+  background: linear-gradient(135deg, rgba(255, 152, 0, 0.15), rgba(255, 183, 77, 0.1));
+  border-color: rgba(255, 152, 0, 0.3);
+}
+
+.saudacao-completa.tarde .saudacao-icone {
+  color: #ff9800;
+  filter: drop-shadow(0 2px 4px rgba(255, 152, 0, 0.3));
+}
+
+.saudacao-completa.noite {
+  background: linear-gradient(135deg, rgba(63, 81, 181, 0.15), rgba(92, 107, 192, 0.1));
+  border-color: rgba(63, 81, 181, 0.3);
+}
+
+.saudacao-completa.noite .saudacao-icone {
+  color: #3f51b5;
+  filter: drop-shadow(0 2px 4px rgba(63, 81, 181, 0.3));
+}
+
+/* Animações */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-3px);
+  }
+  60% {
+    transform: translateY(-1px);
+  }
+}
+
+/* Modo escuro */
+[data-theme="dark"] .nav {
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+[data-theme="dark"] .saudacao-completa {
+  background: linear-gradient(135deg, rgba(0, 132, 0, 0.2), rgba(0, 132, 0, 0.1));
+  border-color: rgba(0, 132, 0, 0.4);
+}
+
+[data-theme="dark"] .saudacao-completa.manha {
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.2), rgba(255, 235, 59, 0.1));
+}
+
+[data-theme="dark"] .saudacao-completa.tarde {
+  background: linear-gradient(135deg, rgba(255, 152, 0, 0.2), rgba(255, 183, 77, 0.1));
+}
+
+[data-theme="dark"] .saudacao-completa.noite {
+  background: linear-gradient(135deg, rgba(63, 81, 181, 0.2), rgba(92, 107, 192, 0.1));
+}
+
+/* Botões ENTRE / CADASTRE-SE */
+.nav-links {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  margin-left: 12px;
+}
+
+.nav-link {
+  color: #008400;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding: 10px 24px;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  border: 2px solid #008400;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  background-color: #008400;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 132, 0, 0.3);
+}
+
+.nav-link:active {
+  transform: translateY(-1px);
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.acoes-direita {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.usuario-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Botão de alternância de tema */
+.theme-toggle {
+  background: none;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 18px;
+}
+
+.theme-toggle:hover {
+  background-color: var(--bg-secondary);
+  transform: scale(1.1);
+}
+
+.carrinho-icon {
+  font-size: 18px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  position: relative;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: none;
+  border: none;
+}
+
+.carrinho-icon:hover {
+  background-color: var(--bg-secondary);
+  transform: scale(1.1);
+}
+
+.carrinho-badge {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  color: white;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  font-weight: 600;
+  border: 1px solid var(--bg-primary);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  animation: pulse 0.3s ease-out;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.carrinho-badge:empty {
+  display: none;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-3px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(3px);
+  }
+}
+
+.carrinho-icon.shake {
+  animation: shake 0.6s ease-in-out;
+}
+
+.usuario-container {
+  position: relative;
+}
+
+.usuario-icone {
+  width: 35px;
+  height: 35px;
+  background: none;
+  color: var(--text-primary);
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 18px;
+}
+
+/* Efeito igual ao theme-toggle */
+.usuario-icone:hover {
+  background-color: var(--bg-secondary);
+  transform: scale(1.1);
+}
+
+/* Estilos removidos - agora usamos apenas o ícone direto */
+
+.usuario-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  z-index: 10;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* Informações do usuário no topo do menu */
+.usuario-info {
+  padding: 16px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.usuario-info strong {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.usuario-tipo {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.menu-divider {
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 0;
+}
+
+.usuario-menu button {
+  background: none;
+  border: none;
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.usuario-menu button:hover {
+  background-color: rgba(0, 132, 0, 0.08);
+  color: #008400;
+}
+
+.usuario-menu button:last-child {
+  color: #dc2626;
+  border-top: 1px solid var(--border-color);
+}
+
+.usuario-menu button:last-child:hover {
+  background-color: rgba(220, 38, 38, 0.08);
+  color: #dc2626;
+}
+
+@media (max-width: 768px) {
+  .saudacao-completa {
+    padding: 6px 12px;
+    gap: 6px;
+  }
+  
+  .saudacao-texto {
+    font-size: 1rem;
+  }
+  
+  .saudacao-icone {
+    font-size: 20px;
+  }
+
+  .usuario-wrapper {
+    gap: 0.5rem;
+  }
+
+  .usuario-menu {
+    right: -20px;
+  }
+}
+/* src/styles/NavBar.css */
+
+/* ... (seu código existente) ... */
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 1rem;
+    height: 70px;
+  }
+
+  .Nome_Logo {
+    display: none; /* Oculta o nome da farmácia em telas pequenas */
+  }
+
+  .saudacao-container {
+    display: none; /* Oculta a saudação em telas de tablet e menores */
+  }
+  
+  .nav-links {
+    display: none; /* Esconde os links de login/registro para dar espaço ao ícone do usuário */
+  }
+  
+  .usuario-wrapper {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    height: 60px;
+  }
+  
+  .img_Logo img {
+    width: 50px;
+  }
+
+  .acoes-direita {
+    gap: 0.5rem;
+  }
+
+  .theme-toggle, .carrinho-icon, .usuario-icone {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .carrinho-badge {
+    font-size: 9px;
+    width: 14px;
+    height: 14px;
+    top: 2px;
+    right: 2px;
+  }
+
+  .usuario-menu {
+    right: 5px;
+    min-width: 180px;
+  }
+}

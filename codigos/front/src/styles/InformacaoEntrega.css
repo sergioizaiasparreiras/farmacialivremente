@@ -1,0 +1,315 @@
+.informacao-entrega {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  border-radius: var(--radius);
+  display: block;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.selecionar-bairro {
+  width: 200px;
+  height: 40px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+  padding: 0 12px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.selecionar-bairro:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.form {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.textoarea {
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+  resize: vertical;
+  padding: 12px;
+  height: 80px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.textoarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.textoarea::placeholder {
+  color: var(--text-secondary);
+}
+
+.resumo-precos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+  padding: 16px;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  align-items: flex-end;
+}
+
+.frete {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s ease;
+  width: auto;
+  text-align: right;
+}
+
+.total {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--color-primary);
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  width: auto;
+  text-align: right;
+}
+
+.botoes-acao {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  justify-content: flex-end;
+}
+
+.botao-continuar-compra {
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+}
+
+.botao-continuar-compra:hover {
+  background-color: var(--bg-tertiary);
+  transform: translateY(-2px);
+}
+
+.botao-finalizar {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  border: 1px solid var(--color-primary);
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.botao-finalizar:hover {
+  background-color: #006b00;
+  transform: translateY(-2px);
+}
+
+.botao-finalizar:disabled {
+  background-color: var(--text-secondary);
+  border-color: var(--text-secondary);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .informacao-entrega {
+    padding: 16px;
+  }
+
+  .selecionar-bairro {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .form {
+    max-width: 100%;
+  }
+
+  .botoes-acao {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .botao-continuar-compra,
+  .botao-finalizar {
+    width: 100%;
+    padding: 14px;
+  }
+
+  .frete,
+  .total {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .total {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .informacao-entrega {
+    padding: 12px;
+  }
+
+  .frete {
+    font-size: 1rem;
+  }
+
+  .total {
+    font-size: 1.1rem;
+  }
+}
+/* Estilos para o select customizado */
+.custom-select-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.custom-select {
+  width: 200px;
+  height: 40px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+  padding: 0 12px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.custom-select:hover {
+  border-color: var(--color-primary);
+}
+
+.custom-select-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background-color: var(--bg-secondary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  overflow: hidden;
+}
+
+.custom-select-search {
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 1rem;
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+}
+
+.custom-select-search:focus {
+  outline: none;
+  border-bottom-color: var(--color-primary);
+}
+
+.custom-select-options {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.custom-select-option {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.custom-select-option:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.custom-select-option.selected {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.custom-select-no-results {
+  padding: 8px 12px;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .custom-select,
+  .custom-select-dropdown {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Estilos para tema escuro */
+[data-theme="dark"] .custom-select,
+[data-theme="dark"] .custom-select-search,
+[data-theme="dark"] .custom-select-dropdown {
+  background-color: #404040;
+  border-color: #555555;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .custom-select-search::placeholder {
+  color: #b0b0b0;
+}
+
+[data-theme="dark"] .custom-select-option:hover {
+  background-color: #505050;
+}
+
+[data-theme="dark"] .custom-select-option.selected {
+  background-color: var(--color-primary);
+}

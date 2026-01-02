@@ -1,0 +1,252 @@
+/* RESET E VARIÁVEIS GLOBAIS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:root {
+  /* Cores do tema claro */
+  --color-primary: #008400;
+  --color-secondary: #d600d6;
+  --color-light: #ffffff;
+  --color-dark: #000000;
+
+  /* Variáveis de tema claro */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9f9f9;
+  --bg-tertiary: #f4f4f4;
+  --text-primary: #000000;
+  --text-secondary: #666666;
+  --border-color: #e5e7eb;
+  --shadow-color: rgba(0, 0, 0, 0.04);
+  --input-bg: #e9f1ff;
+
+  /* Fontes */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Tamanhos de fonte */
+  --font-heading-1: 2.5rem;
+  --font-heading-2: 2rem;
+  --font-heading-3: 1.75rem;
+  --font-heading-4: 1.5rem;
+  --font-body: 1rem;
+  --font-small: 0.875rem;
+
+  --radius: 8px;
+}
+
+/* Aplicação das fontes */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+body, p, span, a, button, input, textarea {
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+/* Tema escuro */
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --bg-tertiary: #3a3a3a;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --border-color: #404040;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --input-bg: #2d2d2d;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+input,
+button {
+  outline: none;
+}
+
+h1 {
+  font-size: var(--font-heading-1);
+  font-weight: bold;
+}
+
+h2 {
+  font-size: var(--font-heading-2);
+  font-weight: bold;
+}
+
+h3 {
+  font-size: var(--font-heading-3);
+  font-weight: bold;
+}
+
+h4 {
+  font-size: var(--font-heading-4);
+  font-weight: bold;
+}
+
+body {
+  font-size: var(--font-body);
+}
+
+/* CONTAINERS DAS TELAS PRINCIPAIS */
+.login-container,
+.registro-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* FORMULÁRIOS */
+.login-form,
+.registro-form {
+  flex: 1;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  background-color: var(--bg-primary);
+}
+
+.login-form input,
+.registro-form input {
+  padding: 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  margin-bottom: 12px;
+  width: 100%;
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* BOTÕES */
+.primary-btn {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  padding: 12px;
+  border-radius: var(--radius);
+  font-weight: bold;
+  width: 100%;
+  transition: background 0.2s ease;
+}
+
+.primary-btn:hover {
+  background-color: #006b00;
+}
+
+/* LOGO */
+.login-logo,
+.registro-logo {
+  width: 80px;
+  height: auto;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  object-fit: contain;
+}
+
+/* IMAGEM LATERAL */
+.login-image,
+.registro-image {
+  flex: 1;
+  background: var(--bg-tertiary);
+  overflow: hidden;
+}
+
+.login-image img,
+.registro-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .login-logo,
+  .registro-logo {
+    width: 60px;
+    top: 16px;
+    left: 16px;
+  }
+
+  .login-form,
+  .registro-form {
+    padding: 40px 24px;
+  }
+
+  .login-image,
+  .registro-image {
+    display: none;
+  }
+}
+
+/* CSS GLOBAL PARA CORREÇÃO DE FILTROS DE PRODUTOS */
+.lista-produtos .produto-item,
+.lista-produtos span.produto-item,
+span.produto-item {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.lista-produtos .produto-item:hover,
+.lista-produtos span.produto-item:hover,
+span.produto-item:hover {
+  background-color: var(--color-primary) !important;
+  color: var(--color-light) !important;
+}
+
+.lista-produtos .produto-item.ativo,
+.lista-produtos span.produto-item.ativo,
+span.produto-item.ativo {
+  background-color: var(--color-primary) !important;
+  color: var(--color-light) !important;
+}
+
+.lista-produtos {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Regra específica para o tema escuro */
+[data-theme="dark"] .principalProdutos .lista_Produtos .lista-produtos span.produto-item {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border: 1px solid #404040 !important;
+}
+
+[data-theme="dark"] .principalProdutos .lista_Produtos .lista-produtos {
+  background-color: #2d2d2d !important;
+  border: 1px solid #404040 !important;
+}
+
+[data-theme='dark'] .login-form h2,
+[data-theme='dark'] .login-link,
+[data-theme='dark'] .login-link a {
+  color: #fff !important;
+}

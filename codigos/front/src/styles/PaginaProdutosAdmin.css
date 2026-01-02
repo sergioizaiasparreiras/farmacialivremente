@@ -1,0 +1,299 @@
+/* REGRA GLOBAL ABSOLUTA - FORÇAR FUNDO BRANCO NOS CARDS DA PÁGINA ADMIN */
+.produtos-container {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* MÁXIMA ESPECIFICIDADE PARA GARANTIR FUNDO BRANCO */
+body .produtos-container .produto-item,
+html .produtos-container .produto-item,
+body .produtos-lista .produto-item,
+html .produtos-lista .produto-item,
+body .produto-item,
+html .produto-item {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+  color: #1a1a1a !important;
+}
+
+body .produtos-container .produto-item:hover,
+html .produtos-container .produto-item:hover,
+body .produtos-lista .produto-item:hover,
+html .produtos-lista .produto-item:hover,
+body .produto-item:hover,
+html .produto-item:hover {
+  background: #f8f9fa !important;
+  background-color: #f8f9fa !important;
+  background-image: none !important;
+}
+
+/* Forçar remoção TOTAL de qualquer fundo nos detalhes do produto */
+.produtos-container .produto-detalhes,
+.produto-item .produto-detalhes,
+.produtos-container .produto-detalhes *,
+.produto-item .produto-detalhes *,
+.produto-detalhes,
+.produto-detalhes *,
+.produto-detalhes .produto-status,
+.produto-detalhes .produto-tipo,
+.produto-detalhes .produto-preco {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+  padding: 0 !important;
+}
+
+/* Remover qualquer div ou span que possa estar criando fundo preto */
+.produto-item div,
+.produto-item span {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* FORÇAR textos sempre visíveis */
+.produto-item .produto-nome,
+.produto-item .produto-descricao,
+.produto-item .produto-info,
+.produto-item .produto-detalhes {
+  color: #1a1a1a !important;
+}
+
+/* Campo de busca admin */
+.busca-admin-container {
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+}
+
+.campo-busca-admin {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.campo-busca-admin:focus {
+  outline: none;
+  border-color: #008400;
+  box-shadow: 0 0 0 3px rgba(0, 132, 0, 0.1);
+}
+
+.campo-busca-admin::placeholder {
+  color: #666666;
+  opacity: 0.8;
+}
+
+/* Mensagem de sem resultados */
+.sem-resultados {
+  text-align: center;
+  padding: 2rem;
+  color: #666666;
+  font-style: italic;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.produto-item .produto-descricao {
+  color: #6c757d !important;
+}
+
+.produtos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.produtos-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+}
+
+.btn-adicionar {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-adicionar:hover {
+  background: #218838;
+  transform: translateY(-1px);
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+.produtos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.produto-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #e8e9ea;
+  border-radius: 8px;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  margin-bottom: 8px;
+}
+
+.produto-item:hover {
+  background: #f8f9fa !important;
+  background-color: #f8f9fa !important;
+  background-image: none !important;
+  border-color: #dee2e6;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.produto-info {
+  flex: 1;
+}
+
+.produto-nome {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #1a1a1a;
+}
+
+.produto-descricao {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.produto-detalhes {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+  background: transparent !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Remover completamente qualquer fundo das tags e containers */
+.produto-detalhes *,
+.produto-status,
+.produto-tipo,
+.produto-preco {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  margin: 0 4px !important;
+  border-radius: 0 !important;
+  font-weight: 500 !important;
+  font-size: 12px !important;
+}
+
+.produto-status.disponivel {
+  color: #008400 !important;
+}
+
+.produto-status.indisponivel {
+  color: #dc3545 !important;
+}
+
+.produto-tipo {
+  color: #6c757d !important;
+}
+
+.produto-preco {
+  color: #008400 !important;
+  font-weight: 600 !important;
+}
+
+.produto-acoes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btn-editar,
+.btn-excluir {
+  border: none !important;
+  padding: 0 !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  transition: all 0.3s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  min-height: 40px !important;
+  max-width: 40px !important;
+  max-height: 40px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+.btn-editar {
+  background-color: #d600d6 !important;
+  color: white !important;
+}
+
+.btn-editar:hover {
+  background-color: #b000b0 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+}
+
+.btn-excluir {
+  background-color: #dc3545 !important;
+  color: white !important;
+}
+
+.btn-excluir:hover {
+  background-color: #c82333 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+}
+  
